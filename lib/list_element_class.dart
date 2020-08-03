@@ -1,12 +1,5 @@
 import 'package:course_app/constants.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
-// import 'package:flutter_full_pdf_viewer/flutter_full_pdf_viewer.dart';
-// import 'package:flutter_full_pdf_viewer/full_pdf_viewer_plugin.dart';
-// import 'package:flutter_full_pdf_viewer/full_pdf_viewer_scaffold.dart';
-// import 'dart:io';
-// import 'dart:typed_data';
-// import 'package:path_provider/path_provider.dart';
 
 class CourseContent extends StatelessWidget {
   final String number;

@@ -11,9 +11,16 @@ import 'vc_message.dart';
 import 'header-svg.dart';
 import 'constants.dart';
 import 'list_element_class.dart';
-import 'pdf_open.dart';
 
-class DetailsScreen extends StatelessWidget {
+class DetailsScreen extends StatefulWidget{
+  @override
+  _DetailsScreenState createState()=>_DetailsScreenState();
+}
+
+class _DetailsScreenState extends State<DetailsScreen>{ 
+  
+  
+
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -145,13 +152,15 @@ class DetailsScreen extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: width*0.05),
                         child:SvgPicture.asset("assets/icons/menu.svg"),),
-                      Container(
+                      Padding(
+                         padding: EdgeInsets.symmetric(horizontal: width*0.027),
+                        child:Container(
                           width: 45,
                           height: 45,
                           decoration: BoxDecoration(
                               image: DecorationImage(
                                   fit: BoxFit.fill,
-                                  image: AssetImage("assets/images/mit.png"))))
+                                  image: AssetImage("assets/images/mit.png"))))),
                     ],
                   ),
                   SizedBox(height: height * 0.03),

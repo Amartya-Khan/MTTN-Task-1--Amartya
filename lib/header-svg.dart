@@ -1,14 +1,6 @@
 import 'package:course_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-// import 'package:flutter_full_pdf_viewer/flutter_full_pdf_viewer.dart';
-// import 'package:flutter_full_pdf_viewer/full_pdf_viewer_plugin.dart';
-// import 'package:flutter_full_pdf_viewer/full_pdf_viewer_scaffold.dart';
-// import 'dart:io';
-// import 'dart:typed_data';
-// import 'package:path_provider/path_provider.dart';
-// import 'doc_paths.dart';
-// import 'vc_message.dart';
 
 Widget header(BuildContext context) {
   final height = MediaQuery.of(context).size.height;
@@ -21,7 +13,7 @@ Widget header(BuildContext context) {
           left: 135,
           top: 0,
           child: SvgPicture.asset(
-            "assets/images/test.svg",
+            "assets/images/test2.svg",
             height: 220,
           ),
         ),
@@ -60,7 +52,7 @@ Widget header(BuildContext context) {
         ),
         Positioned(
           child: Container(
-            height: height * 0.252,
+            height: height * 0.24,
             width: double.infinity,
           ),
         ),

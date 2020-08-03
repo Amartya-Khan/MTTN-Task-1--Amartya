@@ -1,13 +1,6 @@
 import 'package:course_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-// import 'package:flutter_full_pdf_viewer/flutter_full_pdf_viewer.dart';
-// import 'package:flutter_full_pdf_viewer/full_pdf_viewer_plugin.dart';
-// import 'package:flutter_full_pdf_viewer/full_pdf_viewer_scaffold.dart';
-// import 'dart:io';
-// import 'dart:typed_data';
-// import 'package:path_provider/path_provider.dart';
-// import 'doc_paths.dart';
 
 Color circleColor1 = Color(0xffFFC69C);
 double circleRadius1 = 60;
@@ -20,7 +13,7 @@ Widget vcMessage(BuildContext context) {
   return Padding(
     padding: EdgeInsets.symmetric(horizontal: width*0.050),
     child:Container(
-    height: height * 0.15,
+    height: height * 0.13,
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(5),
       //color: Color(0xffFFEBCB),
@@ -30,7 +23,7 @@ Widget vcMessage(BuildContext context) {
       overflow: Overflow.clip,
       children: <Widget>[
         Positioned(
-          top: -50,
+          top: -60,
           right: 60,
           child: Container(
             width: 400,
@@ -41,7 +34,7 @@ Widget vcMessage(BuildContext context) {
           ),
         ),
          Positioned(
-          top: -40,
+          top: -50,
           right: 70,
           child: Container(
             width: 400,
@@ -61,12 +54,12 @@ Widget vcMessage(BuildContext context) {
 
             child:SvgPicture.asset(
             "assets/images/announce.svg",
-            height: 125,
+            height: 140,
             colorBlendMode: BlendMode.multiply,
           ),),
         ),
         Positioned(
-          top: -50,
+          top: -60,
           left: 160,
           child: Container(
             width: 400,
@@ -85,7 +78,7 @@ Widget vcMessage(BuildContext context) {
             child: Text(
               "Tap here to watch the new message by VC:",
               style: TextStyle(
-                fontSize: 13.5,
+                fontSize: 13,
                 color: kTextColor,
                 fontWeight: FontWeight.w400,
               ),
@@ -100,7 +93,7 @@ Widget vcMessage(BuildContext context) {
             child: Text(
               "'WE NEED YOU! Let’s reimagine our future together.'",
               style: TextStyle(
-                fontSize: 13.5,
+                fontSize: 12.5,
                 color: kTextColor,
                 fontWeight: FontWeight.w700,
               ),
@@ -110,7 +103,7 @@ Widget vcMessage(BuildContext context) {
         
         
         Positioned(
-          top: -40,
+          top: -50,
           left: 160,
           child: Container(
             width: 400,
