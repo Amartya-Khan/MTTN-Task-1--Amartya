@@ -123,6 +123,9 @@ class DetailsScreen extends StatelessWidget {
       return tempDocumentPath;
     }
 
+    
+    
+
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
@@ -132,14 +135,16 @@ class DetailsScreen extends StatelessWidget {
         body: Column(
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.only(left: 20, top: 50, right: 20),
+              padding: EdgeInsets.only( top: 50),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      SvgPicture.asset("assets/icons/menu.svg"),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: width*0.05),
+                        child:SvgPicture.asset("assets/icons/menu.svg"),),
                       Container(
                           width: 45,
                           height: 45,

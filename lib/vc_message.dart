@@ -10,15 +10,17 @@ import 'package:flutter_svg/flutter_svg.dart';
 // import 'doc_paths.dart';
 
 Color circleColor1 = Color(0xffFFC69C);
-double circleRadius1 = 50;
+double circleRadius1 = 60;
 Color circleColor2 = Color(0xffFFAE73);
-double circleRadius2 = 25;
+double circleRadius2 = 30;
 
 Widget vcMessage(BuildContext context) {
   final height = MediaQuery.of(context).size.height;
   final width = MediaQuery.of(context).size.width;
-  return Container(
-    height: height * 0.18,
+  return Padding(
+    padding: EdgeInsets.symmetric(horizontal: width*0.050),
+    child:Container(
+    height: height * 0.15,
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(5),
       //color: Color(0xffFFEBCB),
@@ -28,15 +30,55 @@ Widget vcMessage(BuildContext context) {
       overflow: Overflow.clip,
       children: <Widget>[
         Positioned(
-          top: -0,
-          right: 210,
-          child: SvgPicture.asset(
-            "assets/images/announce.svg",
-            height: 135,
+          top: -50,
+          right: 60,
+          child: Container(
+            width: 400,
+            height: 400,
+            child: CustomPaint(
+              painter: OpenPainter(),
+            ),
           ),
         ),
+         Positioned(
+          top: -40,
+          right: 70,
+          child: Container(
+            width: 400,
+            height: 400,
+            child: CustomPaint(
+              painter: OpenPainter2(),
+            ),
+          ),
+        ),
+        
         Positioned(
-          top: 22,
+          top: -0,
+          right: 210,
+          child: AnimatedContainer(
+            duration: Duration(seconds: 5),
+            curve: Curves.easeInOutBack,
+
+            child:SvgPicture.asset(
+            "assets/images/announce.svg",
+            height: 125,
+            colorBlendMode: BlendMode.multiply,
+          ),),
+        ),
+        Positioned(
+          top: -50,
+          left: 160,
+          child: Container(
+            width: 400,
+            height: 400,
+            child: CustomPaint(
+              painter: OpenPainter(),
+            ),
+          ),
+        ),
+        
+        Positioned(
+          top: 14,
           left: 125,
           child: Container(
             width: width * 0.5,
@@ -51,7 +93,7 @@ Widget vcMessage(BuildContext context) {
           ),
         ),
         Positioned(
-          top: 62,
+          top: 55,
           left: 125,
           child: Container(
             width: width * 0.5,
@@ -65,42 +107,11 @@ Widget vcMessage(BuildContext context) {
             ),
           ),
         ),
+        
+        
         Positioned(
-          top: -20,
-          left: 150,
-          child: Container(
-            width: 400,
-            height: 400,
-            child: CustomPaint(
-              painter: OpenPainter(),
-            ),
-          ),
-        ),
-        Positioned(
-          top: -20,
-          left: 150,
-          child: Container(
-            width: 400,
-            height: 400,
-            child: CustomPaint(
-              painter: OpenPainter(),
-            ),
-          ),
-        ),
-        Positioned(
-          top: -20,
-          left: 150,
-          child: Container(
-            width: 400,
-            height: 400,
-            child: CustomPaint(
-              painter: OpenPainter(),
-            ),
-          ),
-        ),
-        Positioned(
-          top: -20,
-          left: 150,
+          top: -40,
+          left: 160,
           child: Container(
             width: 400,
             height: 400,
@@ -122,7 +133,7 @@ Widget vcMessage(BuildContext context) {
         ),
       ],
     ),
-  );
+  ),);
 }
 
 class OpenPainter extends CustomPainter {

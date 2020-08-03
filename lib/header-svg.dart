@@ -18,7 +18,7 @@ Widget header(BuildContext context) {
     child: Stack(
       children: <Widget>[
         Positioned(
-          left: 115,
+          left: 135,
           top: 0,
           child: SvgPicture.asset(
             "assets/images/test.svg",
@@ -55,6 +55,7 @@ Widget header(BuildContext context) {
         ),
         Positioned(
           top: 50,
+          left: 17,
           child: Text("Notifications", style: kHeadingextStyle),
         ),
         Positioned(
