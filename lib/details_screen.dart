@@ -11,6 +11,7 @@ import 'vc_message.dart';
 import 'header-svg.dart';
 import 'constants.dart';
 import 'list_element_class.dart';
+import 'pdf_open.dart';
 
 class DetailsScreen extends StatelessWidget {
   @override
@@ -44,9 +45,9 @@ class DetailsScreen extends StatelessWidget {
       return tempDocumentPath;
     }
 
-    Future<String> prepareTestPdf3() async {
+    Future<String> mechPdf() async {
       final ByteData bytes =
-          await DefaultAssetBundle.of(context).load(documentPath1);
+          await DefaultAssetBundle.of(context).load(documentPath3);
       final Uint8List list = bytes.buffer.asUint8List();
 
       final tempDir = await getTemporaryDirectory();
@@ -57,9 +58,9 @@ class DetailsScreen extends StatelessWidget {
       return tempDocumentPath;
     }
 
-    Future<String> prepareTestPdf4() async {
+    Future<String> ccePdf() async {
       final ByteData bytes =
-          await DefaultAssetBundle.of(context).load(documentPath1);
+          await DefaultAssetBundle.of(context).load(documentPath4);
       final Uint8List list = bytes.buffer.asUint8List();
 
       final tempDir = await getTemporaryDirectory();
@@ -70,9 +71,9 @@ class DetailsScreen extends StatelessWidget {
       return tempDocumentPath;
     }
 
-    Future<String> prepareTestPdf5() async {
+    Future<String> icePdf() async {
       final ByteData bytes =
-          await DefaultAssetBundle.of(context).load(documentPath1);
+          await DefaultAssetBundle.of(context).load(documentPath5);
       final Uint8List list = bytes.buffer.asUint8List();
 
       final tempDir = await getTemporaryDirectory();
@@ -83,9 +84,9 @@ class DetailsScreen extends StatelessWidget {
       return tempDocumentPath;
     }
 
-    Future<String> prepareTestPdf6() async {
+    Future<String> ecePdf() async {
       final ByteData bytes =
-          await DefaultAssetBundle.of(context).load(documentPath1);
+          await DefaultAssetBundle.of(context).load(documentPath6);
       final Uint8List list = bytes.buffer.asUint8List();
 
       final tempDir = await getTemporaryDirectory();
@@ -96,13 +97,26 @@ class DetailsScreen extends StatelessWidget {
       return tempDocumentPath;
     }
 
-    Future<String> prepareTestPdf7() async {
+    Future<String> eeePdf() async {
       final ByteData bytes =
-          await DefaultAssetBundle.of(context).load(documentPath1);
+          await DefaultAssetBundle.of(context).load(documentPath7);
       final Uint8List list = bytes.buffer.asUint8List();
 
       final tempDir = await getTemporaryDirectory();
       final tempDocumentPath = '${tempDir.path}/$documentPath7';
+
+      final file = await File(tempDocumentPath).create(recursive: true);
+      file.writeAsBytesSync(list);
+      return tempDocumentPath;
+    }
+
+    Future<String> csPdf() async {
+      final ByteData bytes =
+          await DefaultAssetBundle.of(context).load(documentPath8);
+      final Uint8List list = bytes.buffer.asUint8List();
+
+      final tempDir = await getTemporaryDirectory();
+      final tempDocumentPath = '${tempDir.path}/$documentPath8';
 
       final file = await File(tempDocumentPath).create(recursive: true);
       file.writeAsBytesSync(list);
@@ -239,13 +253,27 @@ class DetailsScreen extends StatelessWidget {
                               CourseContent(
                                 number: "03",
                                 event: 'BROADCAST',
-                                title: "Notification 3",
+                                title: "Time Table- Mechanical & IP",
                               ),
                               Spacer(),
-                              IconButton(
-                                onPressed: () {},
-                                icon: Icon(Icons.remove_red_eye,
-                                    color: Colors.orange),
+                              Padding(
+                                padding:
+                                    EdgeInsets.only(bottom: height * 0.025),
+                                child: IconButton(
+                                  icon: Icon(Icons.remove_red_eye,
+                                      color: Colors.orange),
+                                  onPressed: () {
+                                    mechPdf().then((path) {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              FullPdfViewerScreen(path),
+                                        ),
+                                      );
+                                    });
+                                  },
+                                ),
                               ),
                             ],
                           ),
@@ -254,13 +282,27 @@ class DetailsScreen extends StatelessWidget {
                               CourseContent(
                                 number: "04",
                                 event: 'BROADCAST',
-                                title: "Notification 1",
+                                title: "Time Table- IT & CCE",
                               ),
                               Spacer(),
-                              IconButton(
-                                onPressed: () {},
-                                icon: Icon(Icons.remove_red_eye,
-                                    color: Colors.orange),
+                              Padding(
+                                padding:
+                                    EdgeInsets.only(bottom: height * 0.025),
+                                child: IconButton(
+                                  icon: Icon(Icons.remove_red_eye,
+                                      color: Colors.orange),
+                                  onPressed: () {
+                                    ccePdf().then((path) {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              FullPdfViewerScreen(path),
+                                        ),
+                                      );
+                                    });
+                                  },
+                                ),
                               ),
                             ],
                           ),
@@ -269,13 +311,114 @@ class DetailsScreen extends StatelessWidget {
                               CourseContent(
                                 number: "05",
                                 event: 'BROADCAST',
-                                title: "Notification 1",
+                                title: "Dept of ICE",
                               ),
                               Spacer(),
-                              IconButton(
-                                onPressed: () {},
-                                icon: Icon(Icons.remove_red_eye,
-                                    color: Colors.orange),
+                              Padding(
+                                padding:
+                                    EdgeInsets.only(bottom: height * 0.025),
+                                child: IconButton(
+                                  icon: Icon(Icons.remove_red_eye,
+                                      color: Colors.orange),
+                                  onPressed: () {
+                                    icePdf().then((path) {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              FullPdfViewerScreen(path),
+                                        ),
+                                      );
+                                    });
+                                  },
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            children: <Widget>[
+                              CourseContent(
+                                number: "05",
+                                event: 'BROADCAST',
+                                title: "Time Table- E&C",
+                              ),
+                              Spacer(),
+                              Padding(
+                                padding:
+                                    EdgeInsets.only(bottom: height * 0.025),
+                                child: IconButton(
+                                  icon: Icon(Icons.remove_red_eye,
+                                      color: Colors.orange),
+                                  onPressed: () {
+                                    ecePdf().then((path) {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              FullPdfViewerScreen(path),
+                                        ),
+                                      );
+                                    });
+                                  },
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            children: <Widget>[
+                              CourseContent(
+                                number: "05",
+                                event: 'BROADCAST',
+                                title: "Time Table- EEE",
+                              ),
+                              Spacer(),
+                              Padding(
+                                padding:
+                                    EdgeInsets.only(bottom: height * 0.025),
+                                child: IconButton(
+                                  icon: Icon(Icons.remove_red_eye,
+                                      color: Colors.orange),
+                                  onPressed: () {
+                                    eeePdf().then((path) {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              FullPdfViewerScreen(path),
+                                        ),
+                                      );
+                                    });
+                                  },
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            children: <Widget>[
+                              CourseContent(
+                                number: "05",
+                                event: 'BROADCAST',
+                                title: "Time Table- CS",
+                              ),
+                              Spacer(),
+                              Padding(
+                                padding:
+                                    EdgeInsets.only(bottom: height * 0.025),
+                                child: IconButton(
+                                  icon: Icon(Icons.remove_red_eye,
+                                      color: Colors.orange),
+                                  onPressed: () {
+                                    csPdf().then((path) {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              FullPdfViewerScreen(path),
+                                        ),
+                                      );
+                                    });
+                                  },
+                                ),
                               ),
                             ],
                           ),

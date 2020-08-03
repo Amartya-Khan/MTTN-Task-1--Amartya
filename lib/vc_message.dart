@@ -58,7 +58,7 @@ Widget vcMessage(BuildContext context) {
             child: Text(
               "'WE NEED YOU! Let’s reimagine our future together.'",
               style: TextStyle(
-                fontSize: 14,
+                fontSize: 13.5,
                 color: kTextColor,
                 fontWeight: FontWeight.w700,
               ),
