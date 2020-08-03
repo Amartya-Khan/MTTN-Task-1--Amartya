@@ -21,7 +21,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Course App',
-      theme: ThemeData(),
+      theme: ThemeData(
+        primaryColor: Colors.orange,
+      ),
       home: DetailsScreen(),
     );
   }
