@@ -1,6 +1,8 @@
 # slcm_notice
 
-![Alt Text](https://media.giphy.com/media/gjg8BtggkGyGxbj9dr/giphy.gif)
+![gif](https://media.giphy.com/media/gjg8BtggkGyGxbj9dr/giphy.gif)
+![screenshot 1](https://ibb.co/7QqqyZn)
+![screenshot 2](https://ibb.co/zX8wknR)
 
 
 A new Flutter project.
