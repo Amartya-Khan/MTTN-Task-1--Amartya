@@ -1,8 +1,8 @@
 # slcm_notice
 
 ![gif](https://media.giphy.com/media/gjg8BtggkGyGxbj9dr/giphy.gif)
-![screenshot 1](https://ibb.co/7QqqyZn)
-![screenshot 2](https://ibb.co/zX8wknR)
+<a href="https://ibb.co/7QqqyZn"><img src="https://i.ibb.co/68kksTH/Screenshot-2020-08-04-01-43-11-99-ea7a920c56c833f741ffb376c78d012a.png" alt="Screenshot-2020-08-04-01-43-11-99-ea7a920c56c833f741ffb376c78d012a" border="0"></a>
+<a href="https://ibb.co/zX8wknR"><img src="https://i.ibb.co/CbJFr17/Screenshot-2020-08-04-01-43-20-92-ea7a920c56c833f741ffb376c78d012a.png" alt="Screenshot-2020-08-04-01-43-20-92-ea7a920c56c833f741ffb376c78d012a" border="0"></a>
 
 
 A new Flutter project.
