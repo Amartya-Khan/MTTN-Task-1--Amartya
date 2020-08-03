@@ -29,3 +29,4 @@ const kSubtitleTextSyule = TextStyle(
   color: kTextColor,
   // fontWeight: FontWeight.bold,
 );
+

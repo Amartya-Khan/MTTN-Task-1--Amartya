@@ -4,6 +4,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_full_pdf_viewer/flutter_full_pdf_viewer.dart';
 import 'package:flutter_full_pdf_viewer/full_pdf_viewer_plugin.dart';
 import 'package:flutter_full_pdf_viewer/full_pdf_viewer_scaffold.dart';
+import 'dart:io';
+import 'dart:typed_data';
+import 'package:path_provider/path_provider.dart';
+import 'doc_paths.dart';
 
 Color circleColor1 = Color(0xffFFC69C);
 double circleRadius1 = 50;
@@ -15,6 +19,95 @@ class DetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
+
+    Future<String> prepareTestPdf() async {
+      final ByteData bytes =
+          await DefaultAssetBundle.of(context).load(documentPath1);
+      final Uint8List list = bytes.buffer.asUint8List();
+
+      final tempDir = await getTemporaryDirectory();
+      final tempDocumentPath = '${tempDir.path}/$documentPath1';
+
+      final file = await File(tempDocumentPath).create(recursive: true);
+      file.writeAsBytesSync(list);
+      return tempDocumentPath;
+    }
+
+    Future<String> prepareTestPdf2() async {
+      final ByteData bytes =
+          await DefaultAssetBundle.of(context).load(documentPath1);
+      final Uint8List list = bytes.buffer.asUint8List();
+
+      final tempDir = await getTemporaryDirectory();
+      final tempDocumentPath = '${tempDir.path}/$documentPath2';
+
+      final file = await File(tempDocumentPath).create(recursive: true);
+      file.writeAsBytesSync(list);
+      return tempDocumentPath;
+    }
+
+    Future<String> prepareTestPdf3() async {
+      final ByteData bytes =
+          await DefaultAssetBundle.of(context).load(documentPath1);
+      final Uint8List list = bytes.buffer.asUint8List();
+
+      final tempDir = await getTemporaryDirectory();
+      final tempDocumentPath = '${tempDir.path}/$documentPath3';
+
+      final file = await File(tempDocumentPath).create(recursive: true);
+      file.writeAsBytesSync(list);
+      return tempDocumentPath;
+    }
+
+    Future<String> prepareTestPdf4() async {
+      final ByteData bytes =
+          await DefaultAssetBundle.of(context).load(documentPath1);
+      final Uint8List list = bytes.buffer.asUint8List();
+
+      final tempDir = await getTemporaryDirectory();
+      final tempDocumentPath = '${tempDir.path}/$documentPath4';
+
+      final file = await File(tempDocumentPath).create(recursive: true);
+      file.writeAsBytesSync(list);
+      return tempDocumentPath;
+    }
+    Future<String> prepareTestPdf5() async {
+      final ByteData bytes =
+          await DefaultAssetBundle.of(context).load(documentPath1);
+      final Uint8List list = bytes.buffer.asUint8List();
+
+      final tempDir = await getTemporaryDirectory();
+      final tempDocumentPath = '${tempDir.path}/$documentPath1';
+
+      final file = await File(tempDocumentPath).create(recursive: true);
+      file.writeAsBytesSync(list);
+      return tempDocumentPath;
+    }
+    Future<String> prepareTestPdf6() async {
+      final ByteData bytes =
+          await DefaultAssetBundle.of(context).load(documentPath1);
+      final Uint8List list = bytes.buffer.asUint8List();
+
+      final tempDir = await getTemporaryDirectory();
+      final tempDocumentPath = '${tempDir.path}/$documentPath6';
+
+      final file = await File(tempDocumentPath).create(recursive: true);
+      file.writeAsBytesSync(list);
+      return tempDocumentPath;
+    }
+    Future<String> prepareTestPdf7() async {
+      final ByteData bytes =
+          await DefaultAssetBundle.of(context).load(documentPath1);
+      final Uint8List list = bytes.buffer.asUint8List();
+
+      final tempDir = await getTemporaryDirectory();
+      final tempDocumentPath = '${tempDir.path}/$documentPath7';
+
+      final file = await File(tempDocumentPath).create(recursive: true);
+      file.writeAsBytesSync(list);
+      return tempDocumentPath;
+    }
+
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
@@ -240,32 +333,108 @@ class DetailsScreen extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          CourseContent(
-                            number: "01",
-                            event: 'BROADCAST',
-                            title: "Notification 1",
-                            isDone: true,
+                          Row(
+                            children: <Widget>[
+                              CourseContent(
+                                number: "01",
+                                event: 'BROADCAST',
+                                title: "Time Table- Media Technology",
+                              ),
+                              Spacer(),
+                              Padding(
+                                padding:
+                                    EdgeInsets.only(bottom: height * 0.025),
+                                child: IconButton(
+                                  icon: Icon(Icons.remove_red_eye,
+                                      color: Colors.orange),
+                                  onPressed: () {
+                                    prepareTestPdf().then((path) {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              FullPdfViewerScreen(path),
+                                        ),
+                                      );
+                                    });
+                                  },
+                                ),
+                              ),
+                            ],
                           ),
-                          CourseContent(
-                            number: '02',
-                            event: 'BROADCAST',
-                            title: "Notification 2",
-                            isDone: true,
+                          Row(
+                            children: <Widget>[
+                              CourseContent(
+                                number: "02",
+                                event: 'BROADCAST',
+                                title: "Notification 2",
+                              ),
+                              Spacer(),
+                              Padding(
+                                padding:
+                                    EdgeInsets.only(bottom: height * 0.025),
+                                child: IconButton(
+                                  icon: Icon(Icons.remove_red_eye,
+                                      color: Colors.orange),
+                                  onPressed: () {
+                                    prepareTestPdf().then((path) {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              FullPdfViewerScreen(path),
+                                        ),
+                                      );
+                                    });
+                                  },
+                                ),
+                              ),
+                            ],
                           ),
-                          CourseContent(
-                            number: '03',
-                            event: 'BROADCAST',
-                            title: "Notification 3",
+                          Row(
+                            children: <Widget>[
+                              CourseContent(
+                                number: "03",
+                                event: 'BROADCAST',
+                                title: "Notification 3",
+                              ),
+                              Spacer(),
+                              IconButton(
+                                onPressed: () {},
+                                icon: Icon(Icons.remove_red_eye,
+                                    color: Colors.orange),
+                              ),
+                            ],
                           ),
-                          CourseContent(
-                            number: '04',
-                            event: 'BROADCAST',
-                            title: "Notification 4",
+                          Row(
+                            children: <Widget>[
+                              CourseContent(
+                                number: "04",
+                                event: 'BROADCAST',
+                                title: "Notification 1",
+                              ),
+                              Spacer(),
+                              IconButton(
+                                onPressed: () {},
+                                icon: Icon(Icons.remove_red_eye,
+                                    color: Colors.orange),
+                              ),
+                            ],
                           ),
-                          CourseContent(
-                            number: '05',
-                            event: 'BROADCAST',
-                            title: "Notification 5",
+                          Row(
+                            children: <Widget>[
+                              CourseContent(
+                                number: "05",
+                                event: 'BROADCAST',
+                                title: "Notification 1",
+                              ),
+                              Spacer(),
+                              IconButton(
+                                onPressed: () {},
+                                icon: Icon(Icons.remove_red_eye,
+                                    color: Colors.orange),
+                              ),
+                            ],
                           ),
                         ],
                       ),
@@ -285,13 +454,12 @@ class CourseContent extends StatelessWidget {
   final String number;
   final String event;
   final String title;
-  final bool isDone;
+
   const CourseContent({
     Key key,
     this.number,
     this.event,
     this.title,
-    this.isDone = false,
   }) : super(key: key);
 
   @override
@@ -319,7 +487,7 @@ class CourseContent extends StatelessWidget {
                   text: "$event\n",
                   style: TextStyle(
                     color: kTextColor.withOpacity(.5),
-                    fontSize: height * 0.02,
+                    fontSize: height * 0.017,
                   ),
                 ),
                 TextSpan(
@@ -327,13 +495,12 @@ class CourseContent extends StatelessWidget {
                   style: kSubtitleTextSyule.copyWith(
                     fontWeight: FontWeight.w600,
                     height: 1.2,
+                    fontSize: height * 0.0195,
                   ),
                 ),
               ],
             ),
           ),
-          Spacer(),
-          Icon(Icons.remove_red_eye, color: Colors.orange),
         ],
       ),
     );
@@ -383,4 +550,19 @@ class OpenPainter2 extends CustomPainter {
 
   @override
   bool shouldRepaint(CustomPainter oldDelegate) => true;
+}
+
+class FullPdfViewerScreen extends StatelessWidget {
+  final String pdfPath;
+
+  FullPdfViewerScreen(this.pdfPath);
+
+  @override
+  Widget build(BuildContext context) {
+    return PDFViewerScaffold(
+        appBar: AppBar(
+          title: Text("Document"),
+        ),
+        path: pdfPath);
+  }
 }
