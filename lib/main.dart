@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Course App',
       theme: ThemeData(
-        primaryColor: Colors.orange,
+        primaryColor: Colors.grey[50],
       ),
       home: SignIn(), 
       //DetailsScreen(),
