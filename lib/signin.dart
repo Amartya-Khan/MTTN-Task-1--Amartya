@@ -290,11 +290,27 @@ class _DetailsScreenState extends State<DetailsScreen> {
         drawer: Container(
           color: Color(0xffFFF3EB),
           child: Drawer(
-              child: ListView(
+              child: Column(
             children: <Widget>[
+              SizedBox(height: height*0.2,),
+               Center(child:Container
+               
+               (height: 100,
+               width: 100,
+                 decoration: BoxDecoration(
+                   image: DecorationImage(
+                     image:AssetImage('assets/images/user.png',),
+                     fit: BoxFit.fill
+                     ),
+                 ),
+                 ),),
+               Center(child:Text("Name", style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),),),
+               Text('Branch', style: TextStyle(fontSize: 17, fontWeight: FontWeight.w400),),
+
+            
               Padding(
                 padding:
-                    EdgeInsets.only(bottom: height * 0.2, top: height * 0.85),
+                    EdgeInsets.only( top: height * 0.5),
                 child: Align(
                   alignment: Alignment.bottomCenter,
                   child: FlatButton(
