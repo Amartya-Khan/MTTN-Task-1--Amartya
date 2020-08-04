@@ -85,7 +85,12 @@ class _SignInState extends State<SignIn> {
           ),),
             //left:200,
            
-      
+          Positioned(
+            top: height/6,
+            //left: width/6.3,
+            child:Padding(
+              padding: EdgeInsets.symmetric(horizontal: 50),
+              child:SvgPicture.asset('assets/images/main-logo.svg', height: 250,),),),
 
 
 
@@ -100,13 +105,13 @@ class _SignInState extends State<SignIn> {
             ),
           ),
           Positioned(
-            top: 300,
-            left: 40,
+            top: height/1.8,
+            left: 25,
             child:Text(
-            'SlcM Notices',
+            'SlcM Notifications',
             style: TextStyle(
-              fontWeight: FontWeight.w200,
-              fontSize: 50.0,
+              fontWeight: FontWeight.w300,
+              fontSize: 40.0,
               color: Colors.white,
             ),
           ),),
@@ -501,7 +506,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                           Row(
                             children: <Widget>[
                               CourseContent(
-                                number: "05",
+                                number: "06",
                                 event: 'BROADCAST',
                                 title: "Time Table- E&C",
                               ),
@@ -530,7 +535,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                           Row(
                             children: <Widget>[
                               CourseContent(
-                                number: "05",
+                                number: "07",
                                 event: 'BROADCAST',
                                 title: "Time Table- EEE",
                               ),
@@ -559,7 +564,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                           Row(
                             children: <Widget>[
                               CourseContent(
-                                number: "05",
+                                number: "08",
                                 event: 'BROADCAST',
                                 title: "Time Table- CS",
                               ),
