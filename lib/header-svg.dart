@@ -38,7 +38,7 @@ Widget header(BuildContext context) {
                   // Colors.white.withAlpha(60),
                   Colors.grey[50].withAlpha(70),
                   Colors.grey[50].withAlpha(100),
-                  Colors.white.withAlpha(150),
+                  Colors.white.withAlpha(180),
                   Colors.white.withAlpha(220),
                 ],
               ),
@@ -52,7 +52,7 @@ Widget header(BuildContext context) {
         ),
         Positioned(
           child: Container(
-            height: height * 0.24,
+            height: height * 0.23,
             width: double.infinity,
           ),
         ),
