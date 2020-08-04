@@ -320,7 +320,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
         body: Column(
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.only(top: 50),
+              padding: EdgeInsets.only(top: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
