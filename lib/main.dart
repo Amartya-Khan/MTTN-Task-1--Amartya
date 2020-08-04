@@ -1,3 +1,5 @@
+import 'package:course_app/signin.dart';
+
 import 'details_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +15,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.orange,
       ),
-      home: DetailsScreen(),
+      home: SignIn(), 
+      //DetailsScreen(),
     );
   }
 }

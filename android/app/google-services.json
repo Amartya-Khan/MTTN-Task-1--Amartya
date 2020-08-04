@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "376709713306",
+    "firebase_url": "https://slcm-notice-amartya.firebaseio.com",
+    "project_id": "slcm-notice-amartya",
+    "storage_bucket": "slcm-notice-amartya.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:376709713306:android:5a6d4efc86b1f903de3e23",
+        "android_client_info": {
+          "package_name": "com.amartyakhan.slcmnotice"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "376709713306-ghuboqn7fovn43h70ks6kmh1chrsfchp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.amartyakhan.slcmnotice",
+            "certificate_hash": "39906a007d4fb2681aaa78cb560d2cc4edcdc561"
+          }
+        },
+        {
+          "client_id": "376709713306-ogg5koumet9b9ko3i0o3o9pncblfqi05.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQABECviVPE5uPJx_59hmk15YTRXyZaiQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "376709713306-ogg5koumet9b9ko3i0o3o9pncblfqi05.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
