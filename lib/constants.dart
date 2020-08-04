@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'dart:ui';
 // Colors
 const kTextColor = Color(0xFF0D1333);
 const kBlueColor = Color(0xFF6E8AFA);
@@ -29,6 +29,13 @@ const kSubtitleTextSyule = TextStyle(
   color: kTextColor,
   // fontWeight: FontWeight.bold,
 );
+
+//GLOBALS ANIMATED SIGNIN
+class Global {
+  static const Color white = const Color(0xffffffff);
+  static const Color mediumBlue = const Color(0xff4A64FE);
+  static const List validEmail = ['test@gmail.com'];
+}
 
 //PDF file paths
 const String documentPath1 = 'assets/pdf/Media_Tech.pdf';

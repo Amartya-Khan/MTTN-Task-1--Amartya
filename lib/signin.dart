@@ -13,6 +13,10 @@ import 'package:path_provider/path_provider.dart';
 import 'vc_message.dart';
 import 'constants.dart';
 import 'list_element_class.dart';
+import 'package:flutter/widgets.dart';
+import 'ui/widgets/button_widget.dart';
+import 'ui/widgets/textfield_widget.dart';
+import 'ui/widgets/wave_widget.dart';
 
 final GoogleSignIn googleSignIn = GoogleSignIn();
 
@@ -62,52 +66,75 @@ class _SignInState extends State<SignIn> {
   }
 
   Scaffold buildUnAuthScreen() {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
-            colors: [Colors.teal, Colors.purple],
+      body: Stack(
+        //alignment: Alignment.center,
+        children: <Widget>[
+          Positioned(child:Container(
+            height: MediaQuery.of(context).size.height,
+            decoration: BoxDecoration(gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              //stops: [0.15, 0.4, 0.8],
+
+              colors: [Colors.orange[800].withAlpha(90),Colors.orange[800].withAlpha(150),]
+
+              )),
+          ),),
+            //left:200,
+           
+      
+
+
+
+            AnimatedPositioned(
+            duration: Duration(milliseconds: 500),
+            curve: Curves.easeOutQuad,
+            top: 0.0,
+            child: WaveWidget(
+              size: MediaQuery.of(context).size,
+              yOffset: height / 1.35,
+              color: Colors.white,
+            ),
           ),
-        ),
-        alignment: Alignment.center,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'SlcM Notices',
-              style: TextStyle(
-                fontFamily: "Signatra",
-                fontSize: 90.0,
-                color: Colors.white,
-              ),
+          Positioned(
+            top: 300,
+            left: 40,
+            child:Text(
+            'SlcM Notices',
+            style: TextStyle(
+              fontWeight: FontWeight.w200,
+              fontSize: 50.0,
+              color: Colors.white,
             ),
-            Container(
-              width: 200,
-              child: RaisedButton(
-                  onPressed: login,
-                  color: Colors.white,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(18.0),
-                      side: BorderSide(color: Colors.orange)),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: <Widget>[
-                      Container(
-                        height: 40,
-                        width: 30,
-                        child:
-                            SvgPicture.asset("assets/images/google-icon.svg"),
-                      ),
-                      Spacer(),
-                      Text('Sign In with Google')
-                    ],
-                  )),
-            ),
-          ],
-        ),
+          ),),
+          Positioned(
+            top: height/1.15,
+            left: width/4.4,
+            child:Container(
+            width: 200,
+            child: FlatButton(
+                onPressed: login,
+                color: Colors.orange[800].withAlpha(10),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(18.0),
+                    side: BorderSide(color: Colors.orange)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Container(
+                      height: 40,
+                      width: 30,
+                      child: SvgPicture.asset("assets/images/google-icon.svg"),
+                    ),
+                    Spacer(),
+                    Text('Sign In with Google')
+                  ],
+                )),
+          ),),
+        ],
       ),
     );
   }
@@ -235,8 +262,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
 
     return Container(
       width: double.infinity,
-      decoration: BoxDecoration(
-          ),
+      decoration: BoxDecoration(),
       child: Scaffold(
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(height * 0.08),
@@ -266,17 +292,22 @@ class _DetailsScreenState extends State<DetailsScreen> {
                     EdgeInsets.only(bottom: height * 0.2, top: height * 0.85),
                 child: Align(
                   alignment: Alignment.bottomCenter,
-                  child:FlatButton(
+                  child: FlatButton(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.0),
                     ),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal:50),
-                    child:Text("Sign out", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w300),),),
-                  color: Color(0xffFFC69C),
-                  
-                  onPressed: logout,
-                ),),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 50),
+                      child: Text(
+                        "Sign out",
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.w300),
+                      ),
+                    ),
+                    color: Color(0xffFFC69C),
+                    onPressed: logout,
+                  ),
+                ),
               ),
             ],
           )),

@@ -25,6 +25,7 @@ dependencies:
   path_provider: ^0.4.1
   url_launcher:
   google_sign_in:
+  provider: ^3.2.0
 
 
   # The following adds the Cupertino Icons font to your application.
